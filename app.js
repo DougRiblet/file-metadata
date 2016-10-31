@@ -14,7 +14,12 @@ app.get('/favicon.ico', function(req, res) {
   res.sendStatus(200);
 });
 
-app.get('/', function(req, res) {
+app.post('/info', upload.single('datafile'), function(req, res) {
+  res.json({
+    "file_name": req.file.originalname,
+    "file_type": req.file.mimetype,
+    "file_size_bytes": req.file.size
+  });
 });
 
 app.listen(port, function () {

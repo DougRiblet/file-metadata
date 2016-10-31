@@ -23,7 +23,11 @@
     padding-bottom: 16px;
   }
   h4 {
-    margin-top: 1em; text-decoration: underline;
+    margin: 1em 0;
+    text-decoration: underline;
+  }
+  #f2, #f3 {
+    margin: 1em;
   }
   </style>
 </head>
@@ -39,27 +43,10 @@
 
 <h4>Submit a file, find out its exact size (in bytes).</h4>
 
-<div class="row">
-  <div class="col-sm-3">
-    <button type="button" class="btn btn-primary btn-block">Choose File</button>
-  </div>
-  <div class="col-sm-9">
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-3">
-    <button type="button" class="btn btn-primary btn-block">Submit File</button>
-  </div>
-  <div class="col-sm-9">
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-3" id="fs1">
-    File size: 
-  </div>
-  <div class="col-sm-9" id="fs2">
-  </div>
-</div>
+<form action="/info" enctype="multipart/form-data" method="post" id="f1">
+<input type="file" name="datafile" id="f2">
+<input type="submit" value="Submit" id="f3">
+</form>
 
 </div>
 

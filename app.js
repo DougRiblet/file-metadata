@@ -1,7 +1,8 @@
 var express = require("express");
 var path    = require("path");
 var multer  = require('multer')
-var upload = multer({ dest: 'uploads/' })
+var storage = multer.memoryStorage()
+var upload = multer({ storage: storage })
 
 var app = express();
 var port = process.env.PORT || 8120;

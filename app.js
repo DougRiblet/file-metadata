@@ -23,6 +23,10 @@ app.post('/info', upload.single('datafile'), function(req, res) {
   });
 });
 
+app.use(function(req, res, next) {
+  res.status(404).send('Error 404');
+});
+
 app.listen(port, function () {
   console.log('App listening on port ' + port);
 });
